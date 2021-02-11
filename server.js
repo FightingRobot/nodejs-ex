@@ -1,7 +1,7 @@
 //  OpenShift sample Node application
-var express = require('express'),
-  app = express(),
-  morgan = require('morgan');
+const express = require('express');
+const app = express();
+const morgan = require('morgan');
 
 const path = require('path');
 const exphbs = require('express-handlebars');
@@ -15,10 +15,10 @@ Object.assign = require('object-assign')
 app.engine('html', require('ejs').renderFile);
 app.use(morgan('combined'))
 
-var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
-  ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
-  mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
-  mongoURLLabel = "";
+const port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
+const ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+// mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
+// mongoURLLabel = "";
 
 // if (mongoURL == null) {
 //   var mongoHost, mongoPort, mongoDatabase, mongoPassword, mongoUser;
