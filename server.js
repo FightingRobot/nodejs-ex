@@ -6,6 +6,11 @@ const coursesRoutes = require('./routes/courses');
 const addRoutes = require('./routes/add');
 const cartRoutes = require('./routes/cart');
 
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+    ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
+    mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
+    mongoURLLabel = "";
+
 const app = express();
 
 const hbs = exphbs.create({
@@ -29,8 +34,10 @@ app.use('/cart', cartRoutes);
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`)
-});
+// app.listen(PORT, () => {
+//     console.log(`Server is running on port ${PORT}`)
+// });
+
+app.listen(port, ip);
 
 module.exports = app;
