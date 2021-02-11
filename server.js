@@ -142,11 +142,11 @@ initDb(function (err) {
   console.log('Error connecting to Mongo. Message:\n' + err);
 });
 
-// app.listen(port, ip);
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`)
-});
+app.listen(port, ip);
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`)
+// });
 // console.log('Server running on http://%s:%s', ip, port);
 
 module.exports = app;
