@@ -88,10 +88,7 @@ const hbs = exphbs.create({
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', 'views');
-
-// регистрируем папку как статическую
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(express.urlencoded({ extended: true }))
 
 app.use('/', homeRoutes);
@@ -106,10 +103,11 @@ app.use(function (err, req, res, next) {
 });
 
 app.listen(port, ip);
+console.log('Server running on http://%s:%s', ip, port);
+
 // const PORT = process.env.PORT || 3000;
 // app.listen(PORT, () => {
 //   console.log(`Server is running on port ${PORT}`)
 // });
-// console.log('Server running on http://%s:%s', ip, port);
 
 module.exports = app;
