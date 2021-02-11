@@ -10,9 +10,9 @@ const coursesRoutes = require('./routes/courses');
 const addRoutes = require('./routes/add');
 const cartRoutes = require('./routes/cart');
 
-Object.assign = require('object-assign')
+// Object.assign = require('object-assign')
 
-app.engine('html', require('ejs').renderFile);
+// app.engine('html', require('ejs').renderFile);
 app.use(morgan('combined'))
 
 const port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
